@@ -12,6 +12,5 @@ def main(page: Page):
 
 app(target=main, view= AppView.WEB_BROWSER)
 
-#test
-# github
+
 
