@@ -2,13 +2,13 @@
 from flet import *
 from home import Home
 import navigator
-import numpy
 
 
 def main(page: Page):
     page.theme_mode = "dark"
     navigator.page(page)
-    navigator.pust(Home())
+    navigator.push(Home())
 
-app(target=main,port=8551)
+app(target=main, host="192.168.1.4",port=8551, view = AppView.WEB_BROWSER)
+
 

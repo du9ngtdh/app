@@ -12,25 +12,25 @@ class Home(UserControl):
         self.txt_number = ft.TextField(
             value="0", text_align=ft.TextAlign.RIGHT, width=100
         )
-        self.dlg = ft.AlertDialog(
+        
+
+    def close_dlg(e):
+        e.page.dialog.open = False
+        e.page.update()
+
+    def open_dlg(e):
+        e.page.dialog = ft.AlertDialog(
             modal=True,
             title=ft.Text("Please confirm"),
             content=ft.Text("Do you really want to delete all those files?"),
             actions=[
-                ft.TextButton("Yes", on_click=lambda _: self.close_dlg()),
-                ft.TextButton("No", on_click=lambda _: self.close_dlg()),
+                ft.TextButton("Yes", on_click=lambda _: e.close_dlg()),
+                ft.TextButton("No", on_click=lambda _: e.close_dlg()),
             ],
             actions_alignment=ft.MainAxisAlignment.END,
             on_dismiss=lambda e: print("Modal dialog dismissed!"),
         )
-
-    def close_dlg(e):
-        e.dlg.open = False
-        e.page.update()
-
-    def open_dlg(e):
-        e.page.dialog = e.dlg
-        e.dlg.open = True
+        e.page.dialog.open = True
         e.page.update()
 
     def minus_click(e):
@@ -44,7 +44,7 @@ class Home(UserControl):
     def toLogin(self):
         from login import Login
 
-        navigator.pust(Login())
+        navigator.push(Login())
 
     def build(self):
         return ft.SafeArea(
@@ -82,3 +82,4 @@ class Home(UserControl):
                 ]
             )
         )
+
