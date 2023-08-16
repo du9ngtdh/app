@@ -10,8 +10,5 @@ def main(page: Page):
     navigator.page(page)
     navigator.pust(Home())
 
-app(target=main, view= AppView.WEB_BROWSER)
-
-#test
-# github
+app(target=main,port=8551)
 

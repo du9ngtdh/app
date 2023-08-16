@@ -52,6 +52,7 @@ class Home(UserControl):
                 controls=[
                     ft.Row(
                         [
+
                             ft.Container(
                                 content=ft.IconButton(
                                     ft.icons.REMOVE,

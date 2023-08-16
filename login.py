@@ -25,8 +25,6 @@ class Login(UserControl):
         return Column(
             controls=[
                 Container(
-                    height=800,
-                    width=200,
                     bgcolor="blue",
                     content=Column(
                         controls=[
