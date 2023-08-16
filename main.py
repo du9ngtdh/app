@@ -14,6 +14,6 @@ app(target=main)
 
 
 
-#source ~/.bashrc
+#nano ~/.bashrc
 
 
