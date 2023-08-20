@@ -13,27 +13,24 @@ class _Navigator:
             self._page.views[len(self._page.views) - 1].controls[0].init()
         except:
             pass
+        print(len(self._page.views))
 
     def push_and_remove(self, pageWidget):
-        for i in range(self._page.views):
+        for i in self._page.views:
             try:
                 i.dispose()
             except:
                 pass
         self._page.views.clear()
-        rount = f"/{self.count}"
-        self._page.views.append(View(route=rount, controls=[pageWidget]))
-        self._page.go(rount)
-        self.count += 1
+        self.push(pageWidget)
 
     def pop(self):
         try:
             self._page.views[len(self._page.views) - 1].controls[0].dispose()
         except:
             pass
-
-        self._page.views.remove(self._page.views[len(self._page.views) - 1])
-        self._page.go(self._page.views[len(self._page.views) - 1].route)
+        self._page.views.pop()
+        self._page.update()
 
 
 _navigator = _Navigator()

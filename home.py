@@ -44,7 +44,7 @@ class Home(UserControl):
     def toLogin(self):
         from login import Login
 
-        navigator.push(Login())
+        navigator.push_and_remove(Login())
 
     def build(self):
         return ft.SafeArea(

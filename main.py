@@ -9,6 +9,6 @@ def main(page: Page):
     navigator.page(page)
     navigator.push(Home())
 
-app(target=main, host = '192.168.1.60')
+app(target=main)
 
 
